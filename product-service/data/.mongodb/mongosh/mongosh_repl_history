@@ -1,0 +1,18 @@
+db.grantRolesToUser('root', [{ role: 'root', db: 'product-service' }]);
+db.getUser("root")
+show users
+db.grantRolesToUser('root', [{ role: 'readWrite', db: 'product-service' }]);
+db.grantRolesToUser('root', [{ role: 'readWrite', db: 'account' }]);
+db.grantRolesToUser('user1', [{ role: 'readWrite', db: 'account' }]);
+use admin
+use product-service
+db.createUser( { user: "root", pwd: "password", roles: ["root"] })
+db.getUsers()
+use admin
+db.createUser( { user: "root", pwd: "password", roles: ["root"] })
+show dbs
+use product-service
+db.createUser( { user: "root", pwd: "password", roles: ["root"] })
+show users
+show dbs
+use admin
